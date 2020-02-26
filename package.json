@@ -1,0 +1,25 @@
+{
+  "name": "fitness_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anya555/fitness_tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anya555/fitness_tracker/issues"
+  },
+  "homepage": "https://github.com/Anya555/fitness_tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-router": "0.0.1",
+    "mongoose": "^5.9.2"
+  }
+}
