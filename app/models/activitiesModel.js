@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ActivitiesSchema = new Schema = ({
+const ActivitiesSchema = new Schema ({
     activities: {
     weight: Number,
     sets: Number,

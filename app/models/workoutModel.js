@@ -8,7 +8,7 @@ const WorkoutSchema = new Schema({
     },
     activities: [
         {
-            type: Schema.Ttpes.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Activities"
         }
     ]

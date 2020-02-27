@@ -128,6 +128,7 @@ $(document).ready(function(){
         opt.val(exercise.name);
         opt.text(exercise.name);
         $("select#exercise").append(opt);
+       
       });
 
     })
