@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
-
-const routes = require("./app/controllers/fitnessControllers");
-app.use(routes);
+const path = require("path");
+const dbconfig = require("./app/db/config");
 
 const PORT = process.env.PORT || 3000;
 
@@ -11,11 +10,17 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const db = require("./app/models");
+// const db = require("./app/models");
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness_tracker", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongofitness", dbconfig.settings);
+
+// Use express router to register routes as middleware
+app.use('/api/activity', require('./app/routes/activity'))
+
+// STUDENTS: REGISTER ROUTES TO HANDLE WORKOUT AND EXERCISE API CALLS
+
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
