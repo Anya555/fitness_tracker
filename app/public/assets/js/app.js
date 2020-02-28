@@ -86,6 +86,7 @@ $(document).ready(function(){
     selectedWorkout = { name: name, day: moment().format("MMM DD, YYYY"), activities: [] };
     allWorkouts.push(selectedWorkout);
 
+     // clearing out previous form input
     $("#workout-name").val("");
     // Save to db via api
     saveSelectedWorkout();

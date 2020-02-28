@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const ActivityCntrl = require('../controllers/activityCntrl');
+const WorkoutCntrl = require('../controllers/workoutCntrl');
 
 // GET  "/""
 // Calls controller which will return all activities for a specific workout
-router.get("/", ActivityCntrl.getAll);
-
-
+router.get("/", WorkoutCntrl.getAll);
 
 
 module.exports = router;

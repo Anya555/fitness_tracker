@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongofitness", 
 
 // Use express router to register routes as middleware
 
-// app.use('/api/activity', require('./app/routes/activity'));
-// app.use('api/workout', require('./app/routes/workout'));
+app.use('/api/activity', require('./app/routes/activity'));
+app.use('/api/workout', require('./app/routes/workout'));
 app.use('/api/exercise', require('./app/routes/exercise'));
 
 // ======================================================================================================//
