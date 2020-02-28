@@ -32,6 +32,7 @@ $(document).ready(function(){
   // Populate activity data for the selected workout
   function populateActivities(){
     $("#activities-list").empty();
+  
     const ul = $("<ul>");
     selectedWorkout.activities.forEach( (activity, idx) => {
       const li = $("<li>");
@@ -52,6 +53,8 @@ $(document).ready(function(){
 
       li.append(html);
       ul.append(li);
+
+     
     });
     $("#activities-list").append(ul);
   }
@@ -83,6 +86,7 @@ $(document).ready(function(){
     selectedWorkout = { name: name, day: moment().format("MMM DD, YYYY"), activities: [] };
     allWorkouts.push(selectedWorkout);
 
+    $("#workout-name").val("");
     // Save to db via api
     saveSelectedWorkout();
 
@@ -107,6 +111,15 @@ $(document).ready(function(){
 
     console.log(selectedWorkout.activities);
 
+    // clearing out previous form input
+    $("#exercise").val("");
+    $("#duration").val("");
+    $("#weight").val("");
+    $("#reps").val("");
+    $("#sets").val("");
+    $("#distance").val("");
+   
+  
     // Save activity to the api
     saveActivity(activity);
     populateActivities();
