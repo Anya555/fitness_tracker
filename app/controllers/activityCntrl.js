@@ -1,23 +1,25 @@
-const Activities = require("../models/activitiesModel");
+const Activity = require("../models/activityModel");
+const Workout = require("../models/workoutModel");
 
 const ActivityCntrl = {
     // This is called (when needed) from the route page when a 
     // listing of all activites is needed
     getAll(req, res) {
 
-        Activities.find({}).then(data => {
+        Activity.find({}).then(data => {
             console.log(data);
             res.json(data);
         });
     },
 
     postActivity(req, res) {
-        const workoutID = req.params.workoutId;
-        Activities.create(req.body)
-            .then(({ _id }) => Activities.findOneAndUpdate({ _id: workoutID }, { $push: { activites: _id } }, { new: true }))
+        const workoutID = req.query.workoutId;
+        console.log(workoutID)
+        Activity.create(req.body)
+            .then(({ _id }) => Workout.findOneAndUpdate({ _id: workoutID }, { $push: { activities: _id } }, { new: true }))
             .then(resp => {
               console.log(resp);
-                const newActivityId = resp.activites[resp.activities];
+                const newActivityId = resp.activites[resp.activities.length-1]._id;
                 res.json({ activityId: newActivityId });
             })
             .catch(err => {

@@ -10,7 +10,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const db = require("./app/models");
+// const db = require("./app/models");
 
 app.use(express.static("./app/public"));
 

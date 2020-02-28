@@ -177,6 +177,7 @@ $(document).ready(function(){
   // Add an activity to the current workout being viewed.
   // Save the currently selected workout
   function saveActivity(activity){
+    console.log(selectedWorkout._id);
     $.ajax({
       method: "POST",
       url: "/api/activity?workoutId=" + selectedWorkout._id,
