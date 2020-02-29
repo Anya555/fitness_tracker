@@ -12,6 +12,7 @@ const ActivityCntrl = {
         });
     },
 
+    // adding activities to a specified workout
     postActivity(req, res) {
         const workoutID = req.query.workoutId;
         console.log(workoutID)
@@ -19,6 +20,7 @@ const ActivityCntrl = {
             .then(({ _id }) => Workout.findOneAndUpdate({ _id: workoutID }, { $push: { activities: _id } }, { new: true }))
             .then(resp => {
               console.log(resp);
+    // I need to return the _id of the latest added workout, so I get it from the last item in the workout array
                 const newActivityId = resp.activites[resp.activities.length-1]._id;
                 res.json({ activityId: newActivityId });
             })

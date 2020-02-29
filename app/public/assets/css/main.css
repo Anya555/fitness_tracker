@@ -3,8 +3,13 @@ html {
 }
 
 body {
-
+  background-image: url(https://thewallpapers.org/zoom/27297/cyan-flare.jpg);
 }
+
+.list-area{
+  background-color: white;
+}
+
 
 ul, li {
   list-style-type: none;
@@ -68,6 +73,7 @@ div.right-column {
 
 #activities-list ul li span {
   font-weight: bold;
+  color: red;
 }
 
 #workouts-list ul li span {
@@ -76,3 +82,16 @@ div.right-column {
   display: block;
   font-weight: normal;
 }
+
+.image{
+  position: fixed;
+  bottom: 5px;
+  left: 65px;
+  height:200px;
+}
+
+.btn{
+  background-color:red;
+  border-color:red;
+}
+
