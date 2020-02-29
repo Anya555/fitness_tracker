@@ -24,7 +24,7 @@ App Flow:
 
 Users are promoted to enter a new workout name. After clicking an 'add' button they are prompted to select from a list of exercises and add activities. Once another 'add' button is cliked a new exercise is being displayed on top of the form with a list of added activities. Users can access their workout with all information about it after reloading a page just by cliking on a workout name. Here is a demo gif of working app:
 
-![fitnessTracker](./app/assets/images/fitnessTracker.gif)
+![fitnessTracker](./app/public/assets/images/fitnessTracker.gif)
 
 
 
